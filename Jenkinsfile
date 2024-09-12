@@ -10,9 +10,9 @@ node{
     }
 
     stage('Test image') {
-        docker.image('alioune/nginx').withRun('-p 80:80') { c ->
+        docker.image('alioune/nginx').withRun('-p 8081:80') { c ->
         sh 'docker ps'
-        sh 'curl localhost'
+        sh 'curl localhost:8081'
 	     }
     }
 }
